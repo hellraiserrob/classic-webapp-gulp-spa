@@ -1,0 +1,10 @@
+:root {
+  --fontSize: 1rem;
+  --mainColor: #12345678;
+}
+
+h1 {
+  color: var(--mainColor);
+
+  /* transform: scale(0.75); */
+}

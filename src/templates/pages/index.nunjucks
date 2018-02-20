@@ -1,0 +1,11 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+<div id="app"></div>
+
+title: {{ title }} 
+
+
+{% endblock %}
