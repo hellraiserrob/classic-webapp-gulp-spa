@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Btn.vue Should match snapshot 1`] = `<button class="btn">new message</button>`;

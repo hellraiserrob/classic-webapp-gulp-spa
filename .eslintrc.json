@@ -9,7 +9,8 @@
   "rules": {
     "quotes": [2, "single"],
     "semi": [2, "always"],
-    "no-console": "off"
+    "no-console": "off",
+    "eol-last": [2, "always"]
   },
   "globals": {
     "module": false,

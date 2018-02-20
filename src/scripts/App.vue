@@ -1,9 +1,18 @@
 <template>
-  <h1>{{ msg }}</h1>
+  <div>
+    <h1>{{ msg }}</h1>
+    <Btn v-bind:action="hello">Say hello</Btn>
+  </div>
 </template>
 
 <script>
+import Btn from './components/Btn.vue';
+
 export default {
+  name: 'app',
+  components: {
+    Btn
+  },
   data() {
     return {
       msg: 'Vue App'
