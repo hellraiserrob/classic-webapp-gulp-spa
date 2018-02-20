@@ -17,6 +17,11 @@ export default {
     return {
       msg: 'Vue App'
     };
+  },
+  methods: {
+    hello(){
+      console.log('hello from the console');
+    }
   }
 };
 </script>
