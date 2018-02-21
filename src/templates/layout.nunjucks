@@ -9,8 +9,6 @@
 
     {% include "partials/header.nunjucks" %}
 
-    <div id="app"></div>
-
     <!-- You write code for this content block in another file -->
     {% block content %} {% endblock %}
 

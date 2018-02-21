@@ -1,0 +1,12 @@
+.row {
+  lost-utility: clearfix;
+  border: 1px solid blue;
+}
+
+.quarter {
+  lost-column: 1/4 0;
+}
+
+.half {
+  lost-column: 1/2 0;
+}

@@ -19,22 +19,18 @@ let config = {
         'webpack-hot-middleware/client'
       ]
     },
-
   output: {
     filename: './scripts/bundle.js',
     path: path.resolve(__dirname, '../src')
 
   },
-
   context: path.resolve(__dirname, '../src'),
-
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
     }
   },
-
   module: {
     rules: [{
       test: /\.js$/,
@@ -53,7 +49,7 @@ let config = {
       }
     }]
   },
-
+  devtool: 'source-map',
   plugins: isProduction ? [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
@@ -69,12 +65,12 @@ function scripts() {
 
   return new Promise(resolve => webpack(config, (err, stats) => {
 
-    if (err) console.log('Webpack', err)
+    if (err) console.log('Webpack', err);
 
-    console.log(stats.toString({ /* stats options */ }))
+    console.log(stats.toString({ /* stats options */ }));
 
-    resolve()
-  }))
+    resolve();
+  }));
 }
 
 module.exports = { config, scripts };

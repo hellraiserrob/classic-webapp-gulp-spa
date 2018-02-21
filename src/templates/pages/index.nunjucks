@@ -3,6 +3,46 @@
 
 {% block content %}
 
+
+<div class="internal internal--accordion internal--accordion--single-open">
+	<div class = "accordion-item accordion-item--open">
+    <div class="accordion-item__heading">
+      <h2 class = "font--title">heading 1</h2>
+      <i class = "accordion-item__heading__icon"></i>
+    </div>
+    <div class="accordion-item__content">
+      <div class = "internal internal--rich-text rich-text">
+        content 1
+      </div>
+    </div>
+  </div>
+	<div class = "accordion-item accordion-item--open">
+    <div class="accordion-item__heading">
+      <h2 class = "font--title">heading 2</h2>
+      <i class = "accordion-item__heading__icon"></i>
+    </div>
+    <div class="accordion-item__content">
+      <div class = "internal internal--rich-text rich-text">
+        content 2
+      </div>
+    </div>
+  </div>
+</div>	
+
+
+<div class="row">
+  <div class="quarter">column 1 (quarter)</div>
+  <div class="half">
+    column 2 (half)
+    <div class="row">
+      <div class="half">nested 1 (half)</div>
+      <div class="half">nested 2 (half)</div>
+    </div>
+  </div>
+  <div class="quarter">column 1 (quarter)</div>
+</div>
+
+
 <div id="app"></div>
 
 <h2>Todos</h2>

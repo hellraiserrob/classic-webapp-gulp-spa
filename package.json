@@ -38,10 +38,13 @@
     "gulp-data": "^1.3.1",
     "gulp-nunjucks-render": "^2.2.2",
     "gulp-postcss": "^7.0.1",
+    "gulp-sourcemaps": "^2.6.4",
     "jest": "^22.4.0",
     "jest-serializer-vue": "^0.3.0",
+    "lost": "^8.2.0",
     "precss": "^3.1.0",
     "stylelint": "^9.0.0",
+    "stylelint-config-lost": "0.0.3",
     "stylelint-config-standard": "^18.1.0",
     "vue-hot-reload-api": "^2.2.4",
     "vue-html-loader": "^1.2.4",
@@ -53,6 +56,7 @@
     "webpack-hot-middleware": "^2.21.0"
   },
   "dependencies": {
+    "jquery": "^3.3.1",
     "vue": "^2.5.13"
   }
 }
