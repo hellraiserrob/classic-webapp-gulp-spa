@@ -20,13 +20,17 @@ function reload(done) {
 export function server(done) {
 
   let config = {
-    server: 'src',
+    // server: 'src',
+    server: {
+      baseDir: ['.tmp', 'public'],
+      // directory: true
+    },
     open: false,
     middleware: [
       webpackDevMiddleware(bundler, { /* options */ }),
       webpackHotMiddleware(bundler)
     ],
-    serveStatic: ['.tmp']
+    // serveStatic: ['./.tmp']
   };
 
   browser.init(config);

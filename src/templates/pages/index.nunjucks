@@ -5,7 +5,22 @@
 
 <div id="app"></div>
 
-title: {{ title }} 
+<h2>Todos</h2>
+
+<!-- Importing Nunjucks Macro -->
+{% import 'macros/todo.nunjucks' as todoItem %}
+
+<ul>
+  {% for todo in todos %}
+    {{todoItem.todo(todo.name)}}
+  {% else %}
+    <li>No todos</li>
+  {% endfor %}
+</ul>
+
+<img src="/images/milky-way.jpg" alt="" />
+
+
 
 
 {% endblock %}
