@@ -1,8 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
-import process from 'process';
 
-const isProduction = (process.env.NODE_ENV === 'production');
+import { isProduction } from './utils';
 
 let config = {
 
@@ -21,8 +20,7 @@ let config = {
     },
   output: {
     filename: './scripts/bundle.js',
-    path: path.resolve(__dirname, '../src')
-
+    path: isProduction ? path.resolve(__dirname, '../dist') : path.resolve(__dirname, '../src')
   },
   context: path.resolve(__dirname, '../src'),
   resolve: {
@@ -37,19 +35,19 @@ let config = {
       exclude: /node_modules/,
       // loader: "eslint-loader"
       use: [
-        'eslint-loader'
+        'babel-loader', 'eslint-loader'
       ]
     }, {
       test: /\.vue$/,
       loader: 'vue-loader',
       options: {
         loaders: {
-          js: 'eslint-loader'
+          js: 'babel-loader!eslint-loader'
         }
       }
     }]
   },
-  devtool: 'source-map',
+  devtool: isProduction ? 'none' : 'source-map',
   plugins: isProduction ? [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{ msg }}</h1>
-    <Btn v-bind:action="hello">Say hello</Btn>
+    <Btn v-bind:action="hello">Say hello to me</Btn>
   </div>
 </template>
 

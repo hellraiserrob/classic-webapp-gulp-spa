@@ -4,7 +4,9 @@ import data from 'gulp-data';
 import fs from 'fs';
 
 import paths from './paths';
+import { isProduction } from './utils';
 
+const folder = isProduction ? 'dist' : '.tmp';
 
 function getDataForFile(file) {  
   const parts = file.relative.split('.');
@@ -30,6 +32,6 @@ export function nunjucks() {
       path: ['src/templates']
     }))
     // output files in app folder
-    .pipe(gulp.dest('./.tmp'));
+    .pipe(gulp.dest(`./${folder}`));
 
 }

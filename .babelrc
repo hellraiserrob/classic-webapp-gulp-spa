@@ -1,0 +1,11 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["ie >= 9"]
+      },
+      "useBuiltIns": true
+    }]
+  ],
+  "plugins": ["transform-object-assign"]
+}

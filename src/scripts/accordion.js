@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 export default class Accordion {
   init() {
-    console.log('accoridon init hot');
+    console.log('accoridon init');
 
     const t = this;
 

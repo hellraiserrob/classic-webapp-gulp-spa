@@ -6,7 +6,9 @@ const paths = {
     nunjucks: 'src/templates/**/*.nunjucks',
     models: 'src/templates/pages/**/*.json'
   },
-
+  folders: {
+    dist: './dist'
+  }
 };
 
 export default paths;
