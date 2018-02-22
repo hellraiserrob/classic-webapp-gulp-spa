@@ -1,0 +1,5 @@
+{% macro section() %}
+<section>
+  {{ caller() }}
+</section>
+{% endmacro %}
