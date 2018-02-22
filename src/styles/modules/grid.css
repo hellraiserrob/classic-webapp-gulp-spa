@@ -1,0 +1,25 @@
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  lost-utility: clearfix;
+  border: 1px solid blue;
+}
+
+.quarter {
+  lost-column: 1/4 0;
+}
+
+.half {
+  lost-column: 1/2 0;
+}
+
+@media (max-width: 800px) {
+  .half,
+  .quarter {
+    lost-column: 1/1;
+  }
+}

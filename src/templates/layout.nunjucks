@@ -3,14 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>Site {{title}}</title>
-    <link href="css/bundle.css" rel="stylesheet">
+    <link href="css/theme-1.css" rel="stylesheet">
   </head>
   <body>
 
     {% include "partials/header.nunjucks" %}
-
-    <!-- You write code for this content block in another file -->
-    {% block content %} {% endblock %}
+    
+    <div class="container">
+      <!-- You write code for this content block in another file -->
+      {% block content %} {% endblock %}
+    </div>
 
     <script src="scripts/bundle.js"></script>
 

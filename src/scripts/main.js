@@ -2,7 +2,8 @@ import Vue from 'vue';
 import $ from 'jquery';
 
 import App from './App.vue';
-import Accordion from './accordion';
+import Accordion from './modules/accordion';
+import StyleSwitcher from './modules/style-switcher';
 
 Vue.config.productionTip = false;
 
@@ -14,6 +15,9 @@ if ($('#app').length > 0) {
 
 const accord = new Accordion();
 accord.init();
+
+const styleSwitcher = new StyleSwitcher();
+styleSwitcher.init();
 
 // accept replacement modules
 if (module.hot) {

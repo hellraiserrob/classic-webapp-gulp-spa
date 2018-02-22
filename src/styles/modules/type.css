@@ -4,7 +4,7 @@
 }
 
 h1 {
-  color: var(--mainColor);
+  /* color: var(--mainColor); */
 
   /* transform: scale(0.75); */
 }

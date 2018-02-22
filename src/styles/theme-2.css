@@ -1,0 +1,9 @@
+@import "variables/theme-2.css";
+@import "modules/grid.css";
+@import "modules/type.css";
+@import "modules/btn.css";
+
+body {
+  color: var(--primary);
+}
+

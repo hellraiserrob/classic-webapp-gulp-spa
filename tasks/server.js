@@ -36,7 +36,7 @@ export function server(done) {
   browser.init(config);
 
   gulp.watch([paths.watch.nunjucks, paths.watch.models], gulp.series(nunjucks, reload));
-  gulp.watch('src/styles/*.css', styles);
+  gulp.watch('src/styles/**/*.css', styles);
 
   // gulp.watch('src/scripts/*.js').on('change', reload);
   // gulp.watch('src/*.html').on('change', reload);

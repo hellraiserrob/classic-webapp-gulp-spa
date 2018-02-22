@@ -3,6 +3,14 @@
 
 {% block content %}
 
+<ul class="style-switcher">
+  <li>
+    <a data-theme="theme-1">theme 1</a>
+  </li>
+  <li>
+    <a data-theme="theme-2">theme 2</a>
+  </li>
+</ul>
 
 <div class="internal internal--accordion internal--accordion--single-open">
 	<div class = "accordion-item accordion-item--open">
