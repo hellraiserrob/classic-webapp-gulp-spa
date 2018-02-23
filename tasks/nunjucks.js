@@ -7,18 +7,21 @@ import paths from './paths';
 import { isProduction } from './utils';
 
 const folder = isProduction ? 'dist' : '.tmp';
+const base =  JSON.parse(fs.readFileSync('./src/models/base.json'));
 
-function getDataForFile(file) {  
+function getDataForFile(file) {
   const parts = file.relative.split('.');
   const name = parts[0];
-  const filePath = `./src/templates/pages/${name}.json`;
+  const filePath = `./src/models/${name}.json`;
 
-  if(!fs.existsSync(filePath)) {
+  if (!fs.existsSync(filePath)) {
     console.log('File not found');
-    return {};
+    return base;
   }
-  
-  return JSON.parse(fs.readFileSync(filePath));
+
+  const model = JSON.parse(fs.readFileSync(filePath));
+
+  return Object.assign(base, model);
 
 }
 

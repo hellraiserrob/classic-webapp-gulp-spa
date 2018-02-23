@@ -4,7 +4,7 @@ export default class StyleSwitcher {
   init() {
     console.log('sw init');
 
-    $('.style-switcher a').off().on('click', this.switch.bind(this));
+    $('.style-switcher button').off().on('click', this.switch.bind(this));
   }
 
   switch(e){

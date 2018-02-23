@@ -1,8 +1,15 @@
 <!-- header.nunjucks -->
 <header>
-  {% if title %}
-    <h1>{{ title }}</h1>
-  {% else %}
-    <h1>No title...</h1>
-  {% endif %}
+  
+  <ul class="style-switcher">
+    <li>
+      <button class="btn btn-sm" data-theme="theme-1">Theme 1</button>
+    </li>
+    <li>
+      <button  class="btn btn-sm" data-theme="theme-2">Theme 2</button>
+    </li>
+  </ul>
+
+  <h1>{{ appName }}</h1>
+
 </header>

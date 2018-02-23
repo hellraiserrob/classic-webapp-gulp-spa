@@ -6,7 +6,8 @@
 
 .row {
   lost-utility: clearfix;
-  border: 1px solid blue;
+
+  /* border: 1px solid blue; */
 }
 
 .quarter {
@@ -15,6 +16,10 @@
 
 .half {
   lost-column: 1/2 0;
+}
+
+.third {
+  lost-column: 1/3 0;
 }
 
 @media (max-width: 800px) {

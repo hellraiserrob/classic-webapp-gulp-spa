@@ -1,0 +1,25 @@
+{
+  "title": "this is the title",
+  "features": [{
+    "name": "Gulp"
+  },{
+    "name": "Webpack"
+  },{
+    "name": "PostCSS"
+  },{
+    "name": "Jest"
+  },{
+    "name": "BrowserSync"
+  },{
+    "name": "Vue"
+  },{
+    "name": "Nunjucks"
+  }],
+  "accordion": [{
+    "title": "Title 1",
+    "content": "Some content 1"
+  }, {
+    "title": "Title 2",
+    "content": "Some content 2"
+  }]
+}

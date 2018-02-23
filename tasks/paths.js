@@ -4,7 +4,7 @@ const paths = {
   },
   watch: {
     nunjucks: 'src/templates/**/*.nunjucks',
-    models: 'src/templates/pages/**/*.json'
+    models: 'src/models/**/*.json'
   },
   folders: {
     dist: './dist'

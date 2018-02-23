@@ -1,0 +1,26 @@
+.accordion-item {
+  margin: 0 0 0 0;
+}
+
+.accordion-item__content {
+  display: none;
+  padding: 10px 15px;
+}
+
+.internal--accordion h2 {
+  font-size: 1em;
+}
+
+.accordion-item__heading {
+  padding: 3px 18px;
+  border-bottom: 1px solid #ddd;
+  background: #eee;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+
+.accordion-item--open .accordion-item__heading {
+  /* border-color: transparent; */
+
+  background: #ddd;
+}

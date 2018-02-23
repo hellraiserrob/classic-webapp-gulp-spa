@@ -1,0 +1,26 @@
+{% macro list(name='No name') %}
+<li>
+  {{name}}
+</li>
+{% endmacro %}
+
+
+{% macro accordion(css) %}
+<div class="internal internal--accordion {{css}}">
+  {{ caller() }}
+</div>
+{% endmacro %}
+
+{% macro accordionItem(title, content) %}
+<div class = "accordion-item">
+  <div class="accordion-item__heading">
+    <h2 class = "font--title">{{title}}</h2>
+    <i class = "accordion-item__heading__icon"></i>
+  </div>
+  <div class="accordion-item__content">
+    <div class = "internal internal--rich-text rich-text">
+      {{content}}
+    </div>
+  </div>
+</div>
+{% endmacro %}

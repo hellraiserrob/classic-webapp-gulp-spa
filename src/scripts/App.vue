@@ -1,7 +1,14 @@
 <template>
   <div>
     <h1>{{ msg }}</h1>
-    <Btn v-bind:action="hello">Say hello to me</Btn>
+    <ul>
+      <li v-for="(todo, index) in todos" v-bind:key="index">{{todo}}</li>
+      <li v-if="!todos.length">Nothing todo</li>
+    </ul>
+    <p>
+      <input type="text" v-model="todo" placeholder="Enter a todo" class="form-control" v-on:keyup.enter="add" />
+    </p>
+    <Btn v-bind:action="add">Add Todo</Btn>
   </div>
 </template>
 
@@ -15,12 +22,17 @@ export default {
   },
   data() {
     return {
-      msg: 'Vue App'
+      msg: 'Todo',
+      todos: [],
+      todo: '',
     };
   },
   methods: {
-    hello(){
-      console.log('hello from the console');
+    add(){
+      if(this.todo.length > 0){
+        this.todos.push(this.todo);
+        this.todo = '';
+      }
     }
   }
 };

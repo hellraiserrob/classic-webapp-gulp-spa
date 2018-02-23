@@ -1,7 +1,0 @@
-{
-  "title": "this is the title",
-  "todos": [{
-    "name": "First on the list",
-    "done": false
-  }]
-}

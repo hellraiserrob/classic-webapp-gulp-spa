@@ -3,79 +3,49 @@
 
 {% block content %}
 
-
 {% import 'macros/layout.nunjucks' as layout %}
-
-{% call layout.section() %}
-  Here is some content for a section
-{% endcall %}
-
-<ul class="style-switcher">
-  <li>
-    <a data-theme="theme-1">theme 1</a>
-  </li>
-  <li>
-    <a data-theme="theme-2">theme 2</a>
-  </li>
-</ul>
-
-<div class="internal internal--accordion internal--accordion--single-open">
-	<div class = "accordion-item accordion-item--open">
-    <div class="accordion-item__heading">
-      <h2 class = "font--title">heading 1</h2>
-      <i class = "accordion-item__heading__icon"></i>
-    </div>
-    <div class="accordion-item__content">
-      <div class = "internal internal--rich-text rich-text">
-        content 1
-      </div>
-    </div>
-  </div>
-	<div class = "accordion-item accordion-item--open">
-    <div class="accordion-item__heading">
-      <h2 class = "font--title">heading 2</h2>
-      <i class = "accordion-item__heading__icon"></i>
-    </div>
-    <div class="accordion-item__content">
-      <div class = "internal internal--rich-text rich-text">
-        content 2
-      </div>
-    </div>
-  </div>
-</div>	
-
+{% import 'macros/content.nunjucks' as content %}
 
 <div class="row">
-  <div class="quarter">column 1 (quarter)</div>
-  <div class="half">
-    column 2 (half)
-    <div class="row">
-      <div class="half">nested 1 (half)</div>
-      <div class="half">nested 2 (half)</div>
-    </div>
+
+  <div class="third">
+
+    <h1>Accordion</h1>
+
+    {% call content.accordion('internal--accordion--single-open') %}
+
+      {% for item in accordion %}        
+        {{content.accordionItem(item.title, item.content)}}
+      {% endfor %}
+
+    {% endcall %}
+
   </div>
-  <div class="quarter">column 1 (quarter)</div>
+
+  <div class="third">
+    <div id="app"></div>
+  </div>
+  
+  <div class="third">    
+
+    
+    {% call layout.section() %}
+
+      <h1>Features</h1>
+
+      <ul>
+        {% for feature in features %}
+          {{content.list(feature.name)}}
+        {% else %}
+          <li>No features</li>
+        {% endfor %}
+      </ul>
+
+    {% endcall %}
+  </div>
+
+  
 </div>
-
-
-<div id="app"></div>
-
-<h2>Todos</h2>
-
-<!-- Importing Nunjucks Macro -->
-{% import 'macros/todo.nunjucks' as todoItem %}
-
-<ul>
-  {% for todo in todos %}
-    {{todoItem.todo(todo.name)}}
-  {% else %}
-    <li>No todos</li>
-  {% endfor %}
-</ul>
-
-<img src="/images/milky-way.jpg" alt="" />
-
-
 
 
 {% endblock %}
