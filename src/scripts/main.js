@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import $ from 'jquery';
 
-import App from './App.vue';
+import App from './todo-app/TodoApp.vue';
 import Accordion from './modules/accordion';
 import StyleSwitcher from './modules/style-switcher';
 

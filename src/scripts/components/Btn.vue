@@ -1,5 +1,5 @@
 <template>
-    <button v-on:click="action" class="btn">
+    <button v-on:click="action" class="btn" v-bind:disabled="disabled">
         <slot>Submit</slot>
     </button>
 </template>
@@ -15,6 +15,10 @@ export default {
     action: {
       type: Function,
       required: true
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   }
 };

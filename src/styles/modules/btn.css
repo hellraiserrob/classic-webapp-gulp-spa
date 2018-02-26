@@ -25,3 +25,7 @@
 .btn:hover {
   background: #333;
 }
+
+.btn:disabled {
+  background: #ccc;
+}
