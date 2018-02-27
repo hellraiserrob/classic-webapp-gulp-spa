@@ -1,8 +1,13 @@
 <template>
   <div>
-    <h1>{{ msg }}</h1>
+    <h1>{{ msg }} ({{outstanding}})</h1>
+    <ul class="filters" v-if="todos.length">
+      <li v-for="(f, index) in filters" v-bind:key="index">
+        <a v-on:click="setFilter(f.value)" :class="{ active: filter == f.value}">{{f.label}}</a>
+      </li>
+    </ul>
     <ul class="todos">
-      <li v-for="(todo, index) in todos" v-bind:key="index" v-bind:class="{ done: todo.done }">
+      <li v-for="(todo, index) in filteredTodos" v-bind:key="index" v-bind:class="{ done: todo.done }">
         <input type="checkbox" v-model="todo.done" v-on:change="toggle"  />
         {{todo.name}}
         <Btn
@@ -29,6 +34,22 @@
 <script>
 import Btn from '../components/Btn.vue';
 
+const filters = {
+  all: function (todos) {
+    return todos;
+  },
+  active: function (todos) {
+    return todos.filter(function (todo) {
+      return !todo.done;
+    });
+  },
+  completed: function (todos) {
+    return todos.filter(function (todo) {
+      return todo.done;
+    });
+  }
+};
+
 export default {
   name: 'todo-app',
   components: {
@@ -37,9 +58,35 @@ export default {
   data() {
     return {
       msg: 'Todo',
-      todos: [],
+      todos: [{
+        name: 'First thing to do',
+        done: true
+      }, {
+        name: 'And another thing',
+        done: false
+      }],
+      // filteredTodos: [],
       todo: '',
+      filter: 'all',
+      filters: [{
+        label: 'All',
+        value: 'all',
+      }, {
+        label: 'Active',
+        value: 'active',
+      }, {
+        label: 'Completed',
+        value: 'completed',
+      }]
     };
+  },
+  computed: {
+    filteredTodos: function () {
+      return filters[this.filter](this.todos);
+    },
+    outstanding: function() {
+      return filters['active'](this.todos).length;
+    }
   },
   methods: {
     add(){
@@ -55,8 +102,10 @@ export default {
       todo.done = !todo.done;
     },
     del(todo) {
-      // todo.done = !todo.done;
       this.todos.splice(this.todos.indexOf(todo), 1);
+    },
+    setFilter(filter) {
+      this.filter = filter;
     }
   }
 };
