@@ -6,3 +6,10 @@
 @import "btn.css";
 @import "accordion.css";
 @import "todos.css";
+
+.material-icons {
+  font-family: "Material Icons", serif;
+  font-style: normal;
+  display: inline-block;
+  vertical-align: middle;
+}

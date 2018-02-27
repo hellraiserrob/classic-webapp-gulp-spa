@@ -5,6 +5,12 @@
       <li v-for="(todo, index) in todos" v-bind:key="index" v-bind:class="{ done: todo.done }">
         <input type="checkbox" v-model="todo.done" v-on:change="toggle"  />
         {{todo.name}}
+        <Btn
+          v-bind:action="del"
+          class="btn btn-naked"
+        >
+          (x)
+        </Btn>    
       </li>
       <li v-if="!todos.length">Nothing todo</li>
     </ul>
@@ -47,6 +53,10 @@ export default {
     },
     toggle(todo) {
       todo.done = !todo.done;
+    },
+    del(todo) {
+      // todo.done = !todo.done;
+      this.todos.splice(this.todos.indexOf(todo), 1);
     }
   }
 };
