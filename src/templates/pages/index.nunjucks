@@ -28,6 +28,7 @@
   
   <div class="third">    
 
+    <div id="contact"></div>
     
     {% call layout.section() %}
 
@@ -41,9 +42,8 @@
         {% endfor %}
       </ul>
 
-      <div id="hello"></div>
-
     {% endcall %}
+
   </div>
 
   

@@ -10,3 +10,11 @@ h1 {
 
   /* transform: scale(0.75); */
 }
+
+h1,
+h2,
+h4,
+p {
+  margin-top: 0;
+}
+

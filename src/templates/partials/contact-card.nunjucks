@@ -1,0 +1,35 @@
+<div class="contact-card">
+  <p>
+    <strong>Contact Card</strong>
+  </p>
+  <div class="row mb10">
+    <div class="half">
+      Username:
+    </div>
+    <div class="half">
+      <strong>{{username}}</strong>
+    </div>
+  </div>
+  <div class="row mb10">
+    <div class="half">
+      Name:
+    </div>
+    <div class="half">
+      <strong>{{name}}</strong>
+    </div>
+  </div>
+  <div class="row">
+    <div class="half">
+      Hobbies:
+    </div>
+    <div class="half">
+      <ul>
+        {% for hobby in hobbies %}
+          <li>{{hobby}}</li>
+        {% endfor %}
+      </ul>    
+    </div>
+  </div>
+  
+  
+</div>

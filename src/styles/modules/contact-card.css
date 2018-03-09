@@ -1,0 +1,13 @@
+.contact-card {
+  padding: 20px;
+  background: #eee;
+  border-radius: 5px;
+
+  /* border: 1px solid #ddd; */
+  margin: 0 0 20px 0;
+}
+
+.contact-card p:last-child,
+.contact-card ul:last-child {
+  margin-bottom: 0;
+}

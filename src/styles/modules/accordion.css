@@ -9,10 +9,11 @@
 
 .internal--accordion h2 {
   font-size: 1em;
+  margin: 0;
 }
 
 .accordion-item__heading {
-  padding: 3px 18px;
+  padding: 10px 18px;
   border-bottom: 1px solid #ddd;
   background: #eee;
   transition: all ease 0.3s;
