@@ -1,5 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+
 
 import { isProduction } from './utils';
 
@@ -45,6 +47,9 @@ let config = {
           js: 'babel-loader!eslint-loader'
         }
       }
+    }, {
+      test: /\.(njk|nunjucks)$/,
+      loader: 'nunjucks-loader'
     }]
   },
   devtool: isProduction ? 'none' : 'source-map',
@@ -54,7 +59,8 @@ let config = {
     }),
     new webpack.optimize.UglifyJsPlugin()
   ] : [
-      new webpack.HotModuleReplacementPlugin()
+      new webpack.HotModuleReplacementPlugin(),
+      new BundleAnalyzerPlugin()
     ]
 };
 
