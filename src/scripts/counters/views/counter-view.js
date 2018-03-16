@@ -3,7 +3,6 @@ import { View } from 'backbone';
 import CounterTemplate from '../../../templates/partials/counter.nunjucks';
 
 export default View.extend({
-  tagName: 'div',
   events: {
     'click button.add': 'inc',
     'click button.decrement': 'dec',
@@ -14,6 +13,7 @@ export default View.extend({
   initialize: function () {
     this.listenTo(this.model, 'change', this.render);
     this.listenTo(this.model, 'destroy', this.remove);
+    this.listenTo(this.model, 'visible', this.toggle);
     this.listenTo(this.model, 'invalid', this.error);
     
     this.render();
@@ -39,5 +39,28 @@ export default View.extend({
   },
   error: function(model, error){
     console.log('error ' + model.get('total') + ' ' + error);
-  }
+  },
+  toggle: function () {
+    const hide = this.isHidden();
+
+    if(hide){
+      this.$el.slideUp();
+    }
+    else {
+      this.$el.slideDown();
+    }
+    // this.$el.toggleClass('hidden', hide);
+  },
+  isHidden: function () {
+    const value = this.model.get('total');
+
+    if(window.countersFilter === 'positive' && value < 0){
+      return true;
+    }
+    if(window.countersFilter === 'negative' && value >= 0){
+      return true;
+    }
+
+    return false;
+  },
 });

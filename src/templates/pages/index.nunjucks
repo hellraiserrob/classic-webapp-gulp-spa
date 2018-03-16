@@ -23,7 +23,22 @@
     <div class="todoapp counters">
       <h1>Counters</h1>
       <div class="list"></div>
-      <button class="add btn btn-sm">Add Counter</button>    
+      <ul class="filters">
+        <li>
+          <a href="#/">All</a>
+        </li>
+        <li>
+          <a href="#/positive">Positive</a>
+        </li>
+        <li>
+          <a href="#/negative">Negative</a>
+        </li>
+      </ul>
+
+      <p>
+        <button class="add btn btn-sm">Add Counter</button>
+      </p>
+
     </div>
 
   </div>

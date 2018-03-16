@@ -1,13 +1,20 @@
 import Vue from 'vue';
 import $ from 'jquery';
+import { history } from 'backbone';
 
 import App from './todo-app/TodoApp.vue';
 import Accordion from './modules/accordion';
 import StyleSwitcher from './modules/style-switcher';
 import ContactCard from './modules/contact-card';
 import CountersApp from './counters/views/counters-view';
+import CountersRouter from './counters/routers/router';
 
 new CountersApp();
+new CountersRouter();
+
+if(!history.started){
+  history.start();
+}
 
 Vue.config.productionTip = false;
 

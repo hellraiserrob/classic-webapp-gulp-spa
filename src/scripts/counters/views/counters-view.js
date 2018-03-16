@@ -5,7 +5,9 @@ import { debounce } from 'underscore';
 import CounterList from '../collections/counters';
 import CounterView from '../views/counter-view';
 
-var counters = new CounterList();
+import ev from '../events/events';
+
+const counters = new CounterList();
 
 export default View.extend({
   el: $('.todoapp'),
@@ -17,12 +19,17 @@ export default View.extend({
 
     this.listenTo(counters, 'add', this.addOne);
     this.listenTo(counters, 'reset', this.addAll);
+    this.listenTo(counters, 'filter', this.filterAll);
     this.listenTo(counters, 'all', debounce(this.render, 0));
+    ev.on('filter', this.filterAll.bind(this));
 
     counters.fetch({ reset: true });
   },
   render: function () {
-    // this.$el.html(this.template());
+    this.$('.filters li a')
+      .removeClass('active')
+      .filter('[href="#/' + (global.countersFilter || '') + '"]')
+      .addClass('active');
   },
   addOne: function (counter) {
     const view = new CounterView({ model: counter });
@@ -36,5 +43,11 @@ export default View.extend({
     counters.create({
       total: 0
     });
-  }
+  },
+  filterOne: function (counter) {
+    counter.trigger('visible');
+  },
+  filterAll: function () {
+    counters.each(this.filterOne, this);
+  },
 });

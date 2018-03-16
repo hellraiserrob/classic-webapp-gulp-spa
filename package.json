@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "gulp --require babel-register --gulpfile tasks",
     "build": "SET NODE_ENV=production&& gulp build --require babel-register --gulpfile tasks",
-    "test": "jest",
+    "test": "jest --watch",
     "demo": "http-server ./dist -o"
   },
   "repository": {
