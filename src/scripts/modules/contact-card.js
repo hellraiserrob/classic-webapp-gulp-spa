@@ -8,8 +8,8 @@ export default class Hello {
   }
   render() {
     const model = { 
-      username: 'hellraiser',
-      name: 'Rob Phillips',
+      username: 'username',
+      name: 'Forename Surname',
       hobbies: ['Running', 'Rugby', 'Cycling']
     };
     const html = template.render(model);

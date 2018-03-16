@@ -5,6 +5,9 @@ import App from './todo-app/TodoApp.vue';
 import Accordion from './modules/accordion';
 import StyleSwitcher from './modules/style-switcher';
 import ContactCard from './modules/contact-card';
+import CountersApp from './counters/views/counters-view';
+
+new CountersApp();
 
 Vue.config.productionTip = false;
 

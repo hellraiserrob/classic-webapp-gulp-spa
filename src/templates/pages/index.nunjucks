@@ -20,6 +20,12 @@
 
     {% endcall %}
 
+    <div class="todoapp counters">
+      <h1>Counters</h1>
+      <div class="list"></div>
+      <button class="add btn btn-sm">Add Counter</button>    
+    </div>
+
   </div>
 
   <div class="third">

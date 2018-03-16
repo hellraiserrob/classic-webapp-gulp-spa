@@ -1,0 +1,5 @@
+<div class="counter">
+  <button class="decrement btn btn-counter btn-sm">-</button>
+  <h1>{{total}}</h1>
+  <button class="add btn btn-counter btn-sm">+</button>      
+</div>
