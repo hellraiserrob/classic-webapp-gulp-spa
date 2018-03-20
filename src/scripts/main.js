@@ -6,10 +6,16 @@ import App from './todo-app/TodoApp.vue';
 import Accordion from './modules/accordion';
 import StyleSwitcher from './modules/style-switcher';
 import ContactCard from './modules/contact-card';
+
 import CountersApp from './counters/views/counters-view';
+import CounterList from './counters/collections/counters';
 import CountersRouter from './counters/routers/router';
 
-new CountersApp();
+const counters = new CounterList();
+
+new CountersApp({
+  collection: counters
+});
 new CountersRouter();
 
 if(!history.started){
