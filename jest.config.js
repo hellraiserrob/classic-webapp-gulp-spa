@@ -3,11 +3,13 @@ module.exports = {
     'js',
     'jsx',
     'json',
-    'vue'
+    'vue',
+    'nunjucks'
   ],
   transform: {
     '^.+\\.vue$': 'vue-jest',
-    '^.+\\.jsx?$': 'babel-jest'
+    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.nunjucks?$': '<rootDir>/test/utils/jest-nunjucks.js'
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1'

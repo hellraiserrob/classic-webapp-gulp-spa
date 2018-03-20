@@ -16,5 +16,19 @@ describe('Counter Model', () => {
     counter.set('total', 100);
     expect(counter.get('total')).toEqual(100);
   });
+  
+  it('Model rejects invalid value', () => {
+    counter.save({total: 'hello'});
+    expect(counter.isValid()).toEqual(true);
+  });
+  
+  it('Model calls invalid event', () => {
+
+    const eventSpy = jest.fn();
+    counter.on('invalid', eventSpy);
+
+    counter.save({total: 'hello'});
+    expect(eventSpy).toHaveBeenCalled();
+  });
 
 });
