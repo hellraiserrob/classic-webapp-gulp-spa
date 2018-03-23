@@ -9,3 +9,8 @@
 .mb20 {
   margin-bottom: 20px;
 }
+
+.loading {
+  display: none;
+  border: 1px solid red;
+}

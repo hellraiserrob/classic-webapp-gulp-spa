@@ -22,6 +22,10 @@
   /* border-radius: 0; */
 }
 
+.btn-danger {
+  background: brown;
+}
+
 .btn-naked {
   background: none;
   color: blue;

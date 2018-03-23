@@ -1,0 +1,15 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+{% import 'macros/layout.nunjucks' as layout %}
+{% import 'macros/content.nunjucks' as content %}
+
+
+<h1>Users</h1>
+<div id="users"></div>
+
+
+
+{% endblock %}
