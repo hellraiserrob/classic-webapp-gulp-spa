@@ -6,7 +6,7 @@
 
 
 {% macro accordion(css) %}
-<div class="internal internal--accordion {{css}}">
+<div class="internal internal--accordion accordion {{css}}">
   {{ caller() }}
 </div>
 {% endmacro %}

@@ -6,7 +6,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 
 import paths from './paths';
 import { config as webpackConfig } from './webpack';
-import { styles } from './styles';
+import { styles, stylesLint } from './styles';
 import { nunjucks } from './nunjucks';
 
 export const browser = Browser.create();
@@ -36,7 +36,7 @@ export function server(done) {
   browser.init(config);
 
   gulp.watch([paths.watch.nunjucks, paths.watch.models], gulp.series(nunjucks, reload));
-  gulp.watch('src/styles/**/*.css', styles);
+  gulp.watch('src/styles/**/*.scss', gulp.series(stylesLint, styles));
 
   // gulp.watch('src/scripts/*.js').on('change', reload);
   // gulp.watch('src/*.html').on('change', reload);

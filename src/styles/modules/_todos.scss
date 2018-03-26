@@ -1,21 +1,21 @@
 .todos {
   list-style: none;
+  margin: 0 0 25px;
   padding: 0;
-  margin: 0 0 25px 0;
 }
 
 .todos li {
-  margin: 0 0 5px 0;
+  margin: 0 0 5px;
 }
 
-.todos li.done {
+.todos .done {
   text-decoration: line-through;
 }
 
 .filters {
   list-style: none;
+  margin: 0 0 25px;
   padding: 0;
-  margin: 0 0 25px 0;
 }
 
 .filters li {
@@ -25,11 +25,11 @@
 
 .filters a {
   color: #999;
-  font-size: 0.9em;
   cursor: pointer;
+  font-size: 0.9em;
 }
 
-.filters a.active {
-  color: blue;
+.filters .active {
+  color: rgb(0, 0, 255);
   cursor: default;
 }
