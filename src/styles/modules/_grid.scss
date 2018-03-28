@@ -1,40 +1,70 @@
-%clearfix::after {
-  clear: both;
-  content: '';
-  display: table;
-}
+@import 'susy';
+
+$susy: (
+  'columns': susy-repeat(12),
+  'gutters': 30px,
+  'spread': 'narrow',
+  'container-spread': 'narrow',
+);
+
 
 .container {
   margin: 0 auto;
   max-width: 1200px;
 }
 
-.row {
-  @extend %clearfix;
-  margin: 0 -20px;
-}
-
-.quarter {
-  float: left;
-  padding: 0 20px;
-  width: 25%;
-}
-
-.half {
-  float: left;
-  padding: 0 20px;
-  width: 50%;
-}
-
 .third {
   float: left;
-  padding: 0 20px;
-  width: 33.33%;
-}
+  margin-right: gutter();
+  width: span(4);
 
-@media (max-width: 800px) {
-  .half,
-  .quarter {
-    width: auto;
+  &:last-child {
+    margin-right: 0;
   }
 }
+
+
+
+
+
+
+// %clearfix::after {
+//   clear: both;
+//   content: '';
+//   display: table;
+// }
+
+// .container {
+//   margin: 0 auto;
+//   max-width: 1200px;
+// }
+
+// .row {
+//   @extend %clearfix;
+//   margin: 0 -20px;
+// }
+
+// .quarter {
+//   float: left;
+//   padding: 0 20px;
+//   width: 25%;
+// }
+
+// .half {
+//   float: left;
+//   padding: 0 20px;
+//   width: 50%;
+// }
+
+// .third {
+//   float: left;
+//   padding: 0 20px;
+//   width: 33.33%;
+// }
+
+// @media (max-width: 800px) {
+//   .half,
+//   .quarter {
+//     width: auto;
+//   }
+// }

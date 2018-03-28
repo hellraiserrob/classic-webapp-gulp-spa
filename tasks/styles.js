@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import postcss from 'gulp-sass';
+import sass from 'gulp-sass';
 import stylelint from 'gulp-stylelint';
 import sourcemaps from 'gulp-sourcemaps';
 
@@ -11,7 +11,9 @@ const folder = isProduction ? 'dist' : '.tmp';
 export function styles() {
   return gulp.src('src/styles/*.scss')
     .pipe(sourcemaps.init())
-    .pipe(postcss())
+    .pipe(sass({
+      includePaths: ['node_modules/susy/sass']
+    }))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(`./${folder}/css`))
     .pipe(browser.stream());
