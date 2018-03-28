@@ -1,0 +1,32 @@
+.accordion {
+  margin: 0 0 30px;
+
+  &-item {
+    margin: 0;
+  }
+
+  &-item__content {
+    display: none;
+    padding: 10px 15px;
+  }
+  
+  h2 {
+    font-size: 1em;
+    margin: 0;
+  }
+  
+  &-item__heading {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    padding: 10px 18px;
+    transition: all ease 0.3s;
+  }
+  
+  &-item--open &-item__heading {
+    background: #ddd;
+  }
+
+}
+
+

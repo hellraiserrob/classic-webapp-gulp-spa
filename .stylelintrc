@@ -1,5 +1,5 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-lost"],
+  "extends": ["stylelint-config-sass-guidelines"],
   "rules": {
     "at-rule-empty-line-before": null
   }

@@ -1,5 +1,5 @@
 import { Events } from 'backbone';
-import { extend } from 'underscore';
+import extend from 'lodash/extend';
 
 var object = {};
 
