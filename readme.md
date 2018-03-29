@@ -8,11 +8,9 @@ A boilerplate with development and build workflows, specically for the situation
   - es6
   - Vue single file components
   - eslint
-- PostCSS
+- Sass
   - stylelint
-  - lost grids
-  - font magic
-  - autoprefixer
+  - susy grids
 - Nunjucks templates (for building up a style-guide of reusable components)
 - Jest
 
